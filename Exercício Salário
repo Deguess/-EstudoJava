@@ -1,0 +1,58 @@
+package teste3;
+
+public class Teste3 {
+
+    public static void main(String[] args) {
+        //variáveis
+        String nome;
+        int numHoras;
+        double valorHora;
+        double salBruto;
+        double inss;
+        double vt;
+        double descontos;
+        double salLiquido;
+
+        //valores
+        nome = "Uchiha Itachi";
+        numHoras = 152;
+        valorHora = 9.78;
+
+        //Calculo do salário bruto
+        salBruto = numHoras * valorHora;
+
+        //Cáculo do INSS
+        if (salBruto <= 1045) {
+            inss = salBruto * 0.075;
+        } else if (salBruto <= 2089.60) {
+            inss = salBruto * 0.09;
+        } else if (salBruto <= 3134.40) {
+            inss = salBruto * 0.12;
+        } else if (salBruto <= 6101.06) {
+            inss = salBruto * 0.14;
+        } else {
+            inss = 854.14;
+        }
+        //Cálculo do VT
+        vt = salBruto * 0.06;
+        if (vt > 206.80) {
+            vt = 206.80;
+        }
+
+        //Salário Líquido
+        descontos = inss + vt;
+        salLiquido = salBruto - descontos;
+
+        //Resultado na tela
+        System.out.println(" Funcionário: " + nome);
+        System.out.println(" Nº horas: " + numHoras);
+        System.out.println(" Valor da hora: " + valorHora);
+        System.out.println(" Salário bruto: " + salBruto);
+        System.out.printf(" Inss: %.2f %n ", inss);
+        System.out.printf("Vale Transporte: %.2f %n ", vt);
+        System.out.printf("Desconto: %.2f %n ", descontos);
+        System.out.println("Salário Líquido: " + salLiquido);
+
+    }
+
+}

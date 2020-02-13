@@ -1,0 +1,36 @@
+package javaapplication4;
+public class JavaApplication4 {
+    
+    public static void main(String[] args) {
+        String produto;
+        double valor;
+        double desconto;
+        double valorFinal;
+        
+        //Valores
+        produto = "TV Smart 32";
+        valor = 1560.75;
+        
+        //Cálculo do desconto
+        if(valor <= 1000) {
+            desconto = 0;
+        } else if(valor <= 2499) {
+            desconto = valor * 0.03;
+        } else if(valor <= 3999) {
+            desconto = valor * 0.04;
+        } else{
+            desconto = valor * 0.05;
+        }
+        
+        //Cáculo - Valor Final
+        valorFinal = valor - desconto;
+        
+        //Mostrar na tela
+        System.out.println("Produto: " + produto);
+        System.out.println("Valor do Produto: R$ " + valor);
+        System.out.printf("Desconto: R$ %.2f %n", desconto);
+        System.out.printf("Valor Final: R$ %.2f %n", valorFinal);
+        
+    }
+    
+}

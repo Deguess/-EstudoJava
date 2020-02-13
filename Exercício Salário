@@ -1,6 +1,6 @@
-package teste3;
+package Salário;
 
-public class Teste3 {
+public class Salário {
 
     public static void main(String[] args) {
         //variáveis

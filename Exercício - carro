@@ -1,0 +1,71 @@
+package array2;
+import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.*;
+
+
+public class Array2 {
+
+    
+
+
+    public static void main(String[] args) {
+        
+        //Modelo do carro
+        Scanner input = new Scanner(System.in);
+        System.out.println("Digite a quantidade: ");
+        String numele  = input.nextLine();
+        String[] mod = new String[Integer.parseInt(numele)];
+        for(int x = 0; x < Integer.parseInt(numele); x++){
+            System.out.println("Digite o modelo: ");
+            mod[x] = input.nextLine(); 
+            }
+        int index = 0;
+        for(String modelo : mod) { 
+        }
+        
+        //Ano do carro
+        int[] ano = new int[4];
+        Scanner an = new Scanner(System.in);
+        for(int x = 0; x!=-1; x++){
+            System.out.println("Digite o ano: ");
+        int anoo = an.nextInt();
+        ano[x] = anoo;    
+        }
+        
+        //Cor do carro
+        Scanner in = new Scanner(System.in);
+        System.out.println("Digite a quantidade: ");
+        String numelementos  = input.nextLine();
+        String[] cor = new String[Integer.parseInt(numele)];
+        for(int x = 0; x < Integer.parseInt(numele); x++){
+            System.out.println("Digite a cor: ");
+            cor[x] = input.nextLine(); 
+        }
+        
+        //Valor do Carro
+        double[] valor = new double[5];
+        Scanner va = new Scanner(System.in);
+        for(int x = 0; x!=-1; x++){
+            System.out.println("Digite o valor: ");
+        double val = va.nextDouble();
+        valor[x] = val;    
+        }
+        
+    /**
+     *
+     * @param modelo
+     * @param cor
+     * @param ano
+     * @param valor
+     */
+    public Array2(String modelo[], String cor[], int ano[], double valor[]) {
+        //Mostrar
+        System.out.println(modelo[1]);           
+        System.out.println(ano[1]);
+        System.out.println(cor[1]);
+        System.out.println(valor[1]);
+    }
+    
+}

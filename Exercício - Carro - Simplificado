@@ -1,0 +1,71 @@
+
+package javaapplication9;
+import java.util.Scanner;
+
+public class JavaApplication9 {
+
+    public static void main(String[] args) {
+        // Ano do carro
+        int n = 4;
+        int i;
+        int anos;
+        Scanner input = new Scanner(System.in);
+        int[] ano = new int[n];
+        for(i=0; i < n; i++){
+            System.out.println("Digite o ano: ");
+            anos = input.nextInt();
+            ano[i] = anos;
+        }
+        
+         //Modelo do carro
+        String mod;
+        Scanner in = new Scanner(System.in);
+        String[] modelo = new String[n];
+        for(i=0; i < n; i++){
+            System.out.println("Digite o modelo: ");
+            mod = in.nextLine();
+            modelo[i] = mod;
+        }
+        
+        //Cor do carro
+        String cores;
+        Scanner out = new Scanner(System.in);
+        String[] cor = new String[n];
+        for(i=0; i < n; i++){
+            System.out.println("Digite a cor: ");
+            cores = out.nextLine();
+            cor[i] = cores;
+        }
+        
+        //Valor do carro
+        
+        int valor;
+        Scanner sc = new Scanner(System.in);
+        int[] valores = new int[n];
+        for(i=0; i < n; i++){
+            System.out.println("Digite o valor: ");
+            valor = sc.nextInt();
+            valores[i] = valor;
+        }
+        System.out.println("    Modelo - Cor - Ano - Valor");
+        
+        for(i=0; i < n; i++) {
+        System.out.println(i + "- " + modelo[i] + " " + cor[i] + " " + ano[i] + " " + valores[i] + "Reais");   
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+}

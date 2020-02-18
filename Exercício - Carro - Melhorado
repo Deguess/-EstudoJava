@@ -1,0 +1,51 @@
+package carros;
+import java.util.*;
+public class Carros {
+
+    public static void main(String[] args) {
+
+        //Variáveis
+        int n = 1;
+        int i;
+        int anos;
+        String mod;
+        String cores;
+        int valores;
+        
+        //Scanner
+        Scanner input = new Scanner(System.in);
+        Scanner out = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
+        
+        //Arrays
+        int[] ano = new int[n];
+        String[] modelo = new String[n];
+        String[] cor = new String[n];
+        int[] valor = new int[n];
+        
+        
+       //Laço para solicitar informação do usuário
+       for(i=0; i < n; i++) {
+           System.out.println("Digite o modelo do carro: ");
+           mod = in.nextLine();
+           modelo[i] = mod;
+           System.out.println("Digite o ano do carro: ");
+           anos = sc.nextInt();
+           ano[i] = anos;
+           System.out.println("Digite a cor do carro: ");
+           cores = out.nextLine();
+           cor[i] = cores;
+           System.out.println("Digite o valor do carro: ");
+           valores = input.nextInt();
+           valor[i] = valores;           
+       }
+        
+        //Mostrar na tela do usuário as opções
+        System.out.println("Item   |Modelo  |Cor    |Ano      |Valor");
+        for(i=0; i < n; i++) {
+        System.out.println(i + "      |" + modelo[i] + "  |" + cor[i] + "  |" + ano[i] + "   |R$" + valor[i]);
+        }       
+    }
+    
+}

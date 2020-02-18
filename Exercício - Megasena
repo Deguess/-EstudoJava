@@ -1,0 +1,22 @@
+public class Megasena {
+
+    public static void main(String[] args) {
+        int i;
+        int n = 6;
+        int[] megasena = new int[n];
+        Random r = new Random();
+        int sorteio;
+
+        //Laço para sorteio
+        for(i=0; i < n; i++) {
+            sorteio = r.nextInt(30) +1;
+            megasena[i] = sorteio;
+        }
+        //Laço foreach
+        for(int resultado : megasena) {
+            System.out.println(resultado);
+        }
+           
+    }
+    
+}

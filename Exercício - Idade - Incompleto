@@ -1,0 +1,34 @@
+package atividade.pkg1.pkg2;
+
+import java.util.Scanner;
+import java.util.Calendar;
+
+public class Atividade12 {
+
+ 
+    public static void main(String[] args) {
+      Scanner digite = new Scanner(System.in);
+        System.out.print("Digite seu nome: ");
+        String nome = digite.nextLine();
+       
+        System.out.println("Qual o ano de seu nascimento: ");
+        int data = digite.nextInt();
+       
+        //soma da idade e valores
+        Calendar c = Calendar.getInstance();
+        int anoAtual = c.get(Calendar.YEAR);
+        int Idade;
+        Idade = anoAtual - data;
+       
+        System.out.println("Você tem " + Idade + (" anos de idade: ") );
+       
+        if (Idade > 18){
+            System.out.println("");
+        }
+               
+       
+     
+    }
+   
+}
+

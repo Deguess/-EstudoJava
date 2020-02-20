@@ -1,0 +1,45 @@
+package boleto;
+import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.*;
+public class Boleto {
+
+    public static void main(String[] args) {
+        //variáveis
+        double valor;
+        Calendar c = Calendar.getInstance();
+        String boleto;
+        double juros;
+        double fixo;        
+        Date data = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = dateFormat.format(data);
+        double valores;
+        
+        
+        //Scanners
+        Scanner in = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);;
+        
+        //Começo
+        System.out.println("Coloque o tipo de boleto: ");
+        boleto = in.nextLine();
+        System.out.println("Informe o valor do boleto: ");
+        valor = input.nextDouble();
+        System.out.println("Informe a data de vencimento do boleto: "
+                + "\nEx: Dia/Mês/Ano");
+        dataFormatada = in.nextLine();
+        
+        if(c.after(data)) {
+            System.out.println("Pagamento concluído!");
+        } else if(c.before(data)) {
+            valores = valor * 0,02;
+            System.out.println("O valor final é: " + valores);
+            
+        }
+        
+        
+    }
+    
+}

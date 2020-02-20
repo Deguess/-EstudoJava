@@ -1,0 +1,44 @@
+package exercício.média;
+
+import java.util.Scanner;
+
+public class ExercícioMédia {
+
+    public static void main(String[] args) {
+        //Variáveis
+        int n = 1;
+        double media;
+        double nota1;
+        double nota2;
+        double nota3;
+        double nota4;
+        int i;
+
+        //Scanner
+        Scanner input = new Scanner(System.in);
+
+        //Solicitar a informação do usuário
+        for (i = 0; i < n; i++) {
+            System.out.println("Digite a primeira nota: ");
+            nota1 = input.nextDouble();
+            System.out.println("Digite a segunda nota: ");
+            nota2 = input.nextDouble();
+            System.out.println("Digite a terceira nota: ");
+            nota3 = input.nextDouble();
+            System.out.println("Digite a quarta nota: ");
+            nota4 = input.nextDouble();
+            media = (nota1 + nota2 + nota3 + nota4) / 4;
+            if (media < 7) {
+                System.out.println("Sua média é: " + media
+                        + ".\nVocê está reprovado.");
+            } else if (media >= 7) {
+                System.out.println("Sua média é: " + media
+                        + ".\nVocê está Aprovado!");
+
+            }
+
+        }
+
+    }
+
+}

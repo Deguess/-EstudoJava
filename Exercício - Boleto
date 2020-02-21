@@ -1,45 +1,79 @@
-package boleto;
-import java.util.Scanner;
-import java.util.Calendar;
-import java.util.Date;
-import java.text.*;
-public class Boleto {
+package boleto.novo;
 
-    public static void main(String[] args) {
-        //variáveis
-        double valor;
-        Calendar c = Calendar.getInstance();
-        String boleto;
-        double juros;
-        double fixo;        
-        Date data = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String dataFormatada = dateFormat.format(data);
-        double valores;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class BoletoNovo {
+    public static void main(String[] args) throws ParseException {
+        //scanner para capturar os textos
+        Scanner txt = new Scanner(System.in);
         
+        //scanner para capturar o valor
+        Scanner num = new Scanner(System.in);
         
-        //Scanners
-        Scanner in = new Scanner(System.in);
-        Scanner input = new Scanner(System.in);;
+		
+		//foram colocados 2 scanners para evitar mistura dos dados
+		//pq estarmos trabalhando com alterbância dos  tipos (String, Double e String)
         
-        //Começo
-        System.out.println("Coloque o tipo de boleto: ");
-        boleto = in.nextLine();
-        System.out.println("Informe o valor do boleto: ");
-        valor = input.nextDouble();
-        System.out.println("Informe a data de vencimento do boleto: "
-                + "\nEx: Dia/Mês/Ano");
-        dataFormatada = in.nextLine();
+        System.out.print("Produto: ");
+        String prod = txt.nextLine(); 
+
+        System.out.print("Valor: ");
+        double val = num.nextDouble();
         
-        if(c.after(data)) {
-            System.out.println("Pagamento concluído!");
-        } else if(c.before(data)) {
-            valores = valor * 0,02;
-            System.out.println("O valor final é: " + valores);
-            
+        System.out.print("Vencimento: ");
+        String venc = txt.nextLine();
+
+        System.out.print("Pagamento: ");
+        String pag = txt.nextLine();
+       
+        System.out.println("\n###### RELATÓRIO DO PAGAMENTO #####");
+       
+        System.out.println("Produto: " + prod);
+        
+        System.out.println("Valor: " + val);
+        
+        //conversão das datas para o formato d/MM/yyyy
+        DateFormat df = new SimpleDateFormat ("dd/MM/yyyy");
+        
+        //variável (tipo date) que recebe a data do vencimento
+        Date vencimento = df.parse(venc);
+        //saída com a data forma
+        System.out.println ("Data do Vencimento: " + venc);
+       
+        //variável (tipo date) que recebe a data do pagamento
+        Date pagamento = df.parse(pag);
+        System.out.println ("Data do pagamento: " + pag);
+       
+        //variável (tipo long) para cálculo entre datas
+        long atraso = (pagamento.getTime() - vencimento.getTime());
+        long dias = atraso / (24 * 60 * 60 * 1000);
+        //a subtração se dá em "milisegundos", então a variável dias
+        //precisa ser dividida por 24(horas), 60(minutos), 60(segundos) e 1000 (milisegundos)
+        //assim o resultado aparecerá em dias.
+        System.out.println ("Dias em atraso:  " + dias);
+        
+        //condição para cálculo dos juros/multa
+        if(dias > 0){
+            System.out.println("\nSeu pagamento está em atraso!\n");
+            double multa = val * 0.02;
+            dias = (int) dias; //convertendo long em int
+            double juros =  dias;
+            double total = val + multa + juros;
+            System.out.println("Multa: " + multa);
+            System.out.println("Juros: " + juros);
+            System.out.println("Total a pagar: " +  total);
+        }else{
+            System.out.println("\nSeu pagamento está em dia.\n");
+            double total = val;
+            System.out.println("Total a pagar: " +  total);
         }
         
+        System.out.println("###### FIM DO RELATÓRIO #####");       
         
     }
-    
+   
 }

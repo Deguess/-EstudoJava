@@ -1,8 +1,6 @@
 package media;
-
 import java.text.DecimalFormat;
 import java.util.*;
-
 public class Media {
 
     public static void main(String[] args) {

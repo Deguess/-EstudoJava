@@ -1,1 +1,44 @@
+package media;
+
+import java.text.DecimalFormat;
+import java.util.*;
+
+public class Media {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double n1, n2, n3, n4;
+        DecimalFormat df = new DecimalFormat("#0.0");
+        System.out.println("Digite a primeira nota: ");
+        n1 = in.nextDouble();
+        System.out.println("Digite a segunda nota: ");
+        n2 = in.nextDouble();
+        System.out.println("Digite a terceira nota: ");
+        n3 = in.nextDouble();
+        System.out.println("Digite a quarta nota: ");
+        n4 = in.nextDouble();
+        double mediaFinal = media(n1, n2, n3, n4);
+        System.out.println("Média final: " + df.format(mediaFinal));
+        conceito(mediaFinal);
+
+    }
+
+    public static double media(double a, double b, double c, double d) {
+        double res = (a + b + c + d) / 4;
+        return res;
+    }
+
+    public static void conceito(double x) {
+
+        if (x >= 9) {
+            System.out.println("Excelente!");
+        } else if (x >= 8) {
+            System.out.println("Ótimo.");
+        } else if (x >= 7) {
+            System.out.println("Bom.");
+        } else {
+            System.out.println("Reprovado.");
+        }
+    }
+}
 

@@ -1,0 +1,63 @@
+importa java.util.Scanner;
+
+public class { 
+public static void main (String[]args) {
+
+//Variáveis
+double dolar;
+double real;
+double resultado;
+double res;
+double valor;
+int escolha;
+Scanner in = new Scanner(System.in);
+
+//Escolha do usuário
+System.out.println(˜Escolha uma opção˜);
+System.out.println(˜Para conversão de dolar para real - Digite 1˜);
+System.out.println(˜Para conversão de real para dolar - Digite 2˜);
+escolha = in.nextInt();
+
+//Condicional
+if( escolha == 1) {
+//Pedido de informação do Cliente
+System.out.println(˜Informe a cotação do real atual: ˜);
+real = in.nextDouble();
+System.out.println(˜Informe o valor que será convertido: ˜);
+valor = in.nextDouble();
+
+//Conta
+resultado = valor/real;
+
+//Impressão
+System.out.printf("O resultado da conversão é: US$ %.2f %n", resultado);
+
+} else if (escolha == 2) {
+//Pedido de informação do Cliente
+System.out.println("Informe a cotação do dolar atual: ");
+dolar = in.nextDouble();
+System.out.println("Informa o valor que será convertido: ");
+valor = in.nextDouble();
+
+//Conta
+res = valor/dolar;
+
+//Impressão
+System.out.printf("O resultado da conversão é: R$ %.2f %n", resultado);
+
+
+
+} else
+
+break;
+
+}
+}
+
+
+
+
+
+
+
+

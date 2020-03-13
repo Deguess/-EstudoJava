@@ -12,6 +12,7 @@ main -> é o nome do método (No Java é o ponto de entrada da aplicação
 
 ---------------------------------------------
 Package (Pacotes)
+
 São utilizados para organizar suas classes como diretórios
 ---------------------------------------------
 Scanner -> Escaneia a entrada de dados do teclado

@@ -1,0 +1,32 @@
+package cadastro;
+import java.util.Scanner;
+public class Dolar {
+    public static void main(String[] args) {
+        //Variáveis
+        double reais;
+        double valor;
+        double resultado;
+        Scanner in = new Scanner(System.in);
+    
+        //Solicitação de Informação
+        System.out.println("Informe a cotação do dolar atual: (Em reais)");        
+        reais = in.nextDouble();
+        System.out.println("Informe  o valor que gostaria de converter: ");
+        valor = in.nextDouble();
+        
+        // """""Limpar Tela"""""
+        System.out.println("\n\n\n\n");
+        
+        //Conta
+        resultado = valor/reais;
+        
+        //Impressão
+        System.out.println("O valor que solicitou a conversão é: R$" + valor);
+        System.out.printf("O resultado da conversão é: US$ %.2f %n", resultado);
+        
+    
+    
+    
+    
+    } 
+}

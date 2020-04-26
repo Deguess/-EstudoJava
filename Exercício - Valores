@@ -1,0 +1,65 @@
+---------------- Class - Valores ----------------
+package Valores;
+/**
+ *
+ * @author Gabriel Guedes Coelho
+ */
+public class Valores {
+    private int valor;
+    private int maior;
+    private int menor;
+
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
+    public int getMaior() {
+        return maior;
+    }
+
+    public void setMaior(int maior) {
+        this.maior = maior;
+    }
+
+    public int getMenor() {
+        return menor;
+    }
+
+    public void setMenor(int menor) {
+        this.menor = menor;
+    }   
+}
+----------------------------------------------
+---------------- Class - Main ----------------
+package Valores;
+import java.util.Scanner;
+/**
+ *
+ * @author Gabriel Guedes Coelho
+ */
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Valores v = new Valores();
+        int i = 0;
+        
+        for(i = 0; i <= 99; i++) {
+            System.out.println("Digite o " + i + "º número: ");
+            v.setValor(in.nextInt());
+            if(v.getValor() >= v.getMaior()) {
+                v.setMaior(v.getValor());
+            } else if(v.getValor() <= v.getMenor()) {
+                v.setMenor(v.getValor());
+            } else
+                v.setValor(0);          
+    }
+        
+        System.out.println("O maior número é: " + v.getMaior());
+        System.out.println("O menor número é: " + v.getMenor());
+  } 
+}
+---------------- End ----------------

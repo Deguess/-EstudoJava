@@ -184,3 +184,15 @@ public class Main {
     }    
 }
 --------------------------------- End ---------------------------------
+EXEMPLO DE MÉTODO DE PESQUISAR PELO CPF
+SE O MESMO FOSSE UM INT
+
+public Pessoa pesquisarPessoa(int cpf) {
+Pessoa p = null;
+for(int = 0; i < list.sinze(); i++) {
+if(this.lista.get(i).getCpf()==cpf) {
+p = this.lista.get(i);
+}
+}
+return p;
+}

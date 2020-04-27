@@ -1,0 +1,186 @@
+--------------------------------- Class - Pessoa ---------------------------------
+package ArrayList;
+
+/**
+ *
+ * @author Gabriel Guedes Coelho
+ */
+public class Pessoa {
+    private String nome, cpf, telefone, endereco;
+    private double salario;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        return "Dados cadastrais " + 
+                "\nNome: " + nome + 
+                "\nCpf: " + cpf + 
+                "\nTelefone: " + telefone + 
+                "\nEndereco: " + endereco + 
+                "\nSalario: R$" + salario;
+    }    
+    }
+--------------------------------- Class - ListaPessoa ---------------------------------    
+package ArrayList;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Gabriel Guedes Coelho
+ */
+public class ListaPessoa {
+    private ArrayList<Pessoa> lista = new ArrayList<>();
+
+    public ArrayList<Pessoa> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<Pessoa> lista) {
+        this.lista = lista;
+    }
+    
+    public void adicionarPessoa(Pessoa p) {
+        lista.add(p);
+    }
+    
+    public void apagarTudo() {
+        lista.clear();
+    }
+    
+    public Pessoa pesquisarPessoa(String cpf) {
+        Pessoa p = null;
+        for( int i = 0; i < this.lista.size(); i++) {
+            if(this.lista.get(i).getCpf().equalsIgnoreCase(cpf)) {
+                p = this.lista.get(i);
+            }
+        }
+        
+        return p;
+    }
+    
+    public double somaSalario() {
+        double soma = 0;
+        for(int i = 0; i < this.lista.size(); i++) {
+            soma = this.lista.get(i).getSalario() + soma; 
+        }
+        
+        return soma;
+    }
+
+    @Override
+    public String toString() {
+        return "Lista de " +  lista;
+    }    
+}
+--------------------------------- Class - Main ---------------------------------
+package ArrayList;
+import java.util.Scanner;
+/**
+ *
+ * @author Gabriel Guedes
+ */
+public class Main {
+    public static void main(String[] args) {
+        //Variáveis e outras instâncias
+        int escolha;
+        Scanner in = new Scanner(System.in);
+        ListaPessoa lista = new ListaPessoa();
+        Pessoa p = new Pessoa();
+        
+        do {
+            //Menu para escolha
+            System.out.println("Menu");
+            System.out.println("1 - Cadastrar nova pessoa");
+            System.out.println("2 - Mostrar todas as pessoas cadastradas");
+            System.out.println("3 - Buscar um cadastro por CPF");
+            System.out.println("4 - Mostrar a soma dos salário de "
+                    + "todos os cadastrados");
+            System.out.println("5 - Apagar todas as informações da lista");
+            escolha = in.nextInt();
+            System.out.println("0 - Sair do sistema");
+            
+            //Switch - Case
+            switch (escolha) {
+                case 1:
+                    System.out.println("Informe o nome: ");
+                    in.nextLine();
+                    p.setNome(in.nextLine());
+                    System.out.println("Informe o CPF: ");
+                    p.setCpf(in.nextLine());
+                    System.out.println("Informe o telefone: ");
+                    p.setTelefone(in.nextLine());
+                    System.out.println("Informe o endereço: ");
+                    p.setEndereco(in.nextLine());
+                    System.out.println("Informe o salário: ");
+                    p.setSalario(in.nextDouble());
+                    
+                    lista.adicionarPessoa(p);
+                break;
+                
+                case 2: 
+                    System.out.println(lista);
+                break;
+                
+                case 3:
+                    System.out.println("Informe o CPF: ");
+                    in.nextLine();
+                    String busca = in.nextLine();
+                    Pessoa resultado = lista.pesquisarPessoa(busca);
+                    System.out.println("Dados cadastrais: " + resultado);
+                break;
+                
+                case 4:
+                    System.out.println("A soma dos salários é: " + lista.somaSalario());
+                break;
+                
+                case 5:
+                    lista.apagarTudo();
+                    System.out.println("Dados apagados");
+                break;
+                
+                default:
+                    System.out.println("Sistema fechado");
+            }                       
+        } while(escolha >= 1 && escolha <= 5);       
+    }    
+}
+--------------------------------- End ---------------------------------
